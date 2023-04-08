@@ -10,7 +10,7 @@ auth = tweepy.OAuth1UserHandler(
 )
 api = tweepy.API(auth)
 
-f = open(r'Lyrics.txt','r')
+f = open(r'Lyrics.txt','r') #Replace with file of choice
 
 data = f.readlines()
 
@@ -32,7 +32,7 @@ api.update_status(status=line)
 
 data[len(data)-1] = x
 
-fp = open(r'Lyrics.txt', 'w')
+fp = open(r'Lyrics.txt', 'w') #Replace with file of choice
 for item in data:
     item = str(item)
     fp.write(item)
@@ -40,7 +40,7 @@ for item in data:
 fp.close()
 
 result = ""
-with open(r"Lyrics.txt", "r+") as file:
+with open(r"Lyrics.txt", "r+") as file: #Replace with file of choice
     for line in file:
         if not line.isspace():
             result += line
